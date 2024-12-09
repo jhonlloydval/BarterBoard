@@ -249,7 +249,7 @@ class Listing:
 
 
     def remove_listing(self):
-        print("\nREMOVE LISTING")
+        print("\nR E M O V E  L I S T I N G")
         print("Select the ID of the listing you want to remove:")
         print("----------------------------------------------------")
         conn = sqlite3.connect("barterboard.db")
@@ -380,16 +380,17 @@ class Listing:
         """, (user_id,))
         user_listings = cursor.fetchall()
 
+        print("\nL I S T I N G  U P D A T E")
+        print("----------------------------------------------")
+
         if not user_listings:
-            print("----------------------------------------------")
             print("No listings available for this user.")
             print("----------------------------------------------")
             conn.close()
             input("Press enter to exit.")
+            clear_terminal()
             return
 
-        print("\nL I S T I N G  U P D A T E")
-        print("----------------------------------------------")
 
         # Iterate over listings and display
         for listing in user_listings:
