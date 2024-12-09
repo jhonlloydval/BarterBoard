@@ -19,13 +19,12 @@ def barterboard():
 ▐▛▀▚▖▐▛▀▜▌▐▛▀▚▖ █  ▐▛▀▀▘▐▛▀▚▖▐▛▀▚▖▐▌ ▐▌▐▛▀▜▌▐▛▀▚▖▐▌  █ 
 ▐▙▄▞▘▐▌ ▐▌▐▌ ▐▌ █  ▐▙▄▄▖▐▌ ▐▌▐▙▄▞▘▝▚▄▞▘▐▌ ▐▌▐▌ ▐▌▐▙▄▄▀                                                                                                  
                                                         
--------- REVIVING BARTER, REINVENTING EXCHANGE --------                                                        
-                                                        """.center(width))
+-------- REVIVING BARTER, REINVENTING EXCHANGE --------  """.center(width))
     
     listings = display_barterboard()
     
     while True:
-        print("1) BARGAIN\n2) RETURN TO MAIN MENU\n")
+        print("\n1) BARGAIN\n2) RETURN TO MAIN MENU\n")
         choice = input("Enter your choice: ")
 
         if choice == "1":

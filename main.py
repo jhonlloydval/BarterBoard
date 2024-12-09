@@ -107,6 +107,8 @@ setup_database()
 add_listings_table()
 add_proposal_table()
 add_transaction_table()
+
+# START MENU
 start_menu()
 
 

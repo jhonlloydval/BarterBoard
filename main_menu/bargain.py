@@ -14,9 +14,11 @@ def bargain(username, listings):
     name = list(User.get_logged_in_user())
     final_name = name[1]
 
+
+    print("\nB A R G A I N")
+    print("Note: Type 'x' to exit at any time.")
     while True:
-        print("\nBARGAIN")
-        print("Note: Type 'x' to exit at any time.")
+
 
         trade_request = input("\nEnter the ID of the item you want to trade: ")
         if trade_request.lower() == 'x':
@@ -92,6 +94,38 @@ def bargain(username, listings):
         conn.commit()
         print("Trade request sent successfully!")
                 
-        print(f"Trade proposal for {item} has been sent to the other user!")
+        print(f"Trade proposal for {item} has been sent to the other user!\n")
         conn.close()
         return
+    
+
+def accept_trade(proposal_id, username):
+    """Accepts a trade proposal and moves it to the transactions table."""
+    conn = sqlite3.connect("barterboard.db")
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM proposals WHERE id = ?", (proposal_id,))
+    proposal = cursor.fetchone()
+
+    if not proposal:
+        print("Proposal not found.")
+        conn.close()
+        return
+    
+    cursor.execute("""
+                   INSERT INTO transactions (from_user, to_user, item, description, quantity, location, status)
+                   VALUES (?, ?, ?, ?, ?, ?, ?)
+                   """, (proposal[1], username, proposal[2], proposal[3], proposal[4], proposal[5], "Accepted" ))
+    
+    cursor.execute("""
+        UPDATE proposals SET status = 'Accepted' WHERE id = ?
+""", (proposal_id,))
+    
+
+    cursor.execute("""
+        DELETE FROM listings WHERE id = ?
+    """, (proposal[1],))  # proposal[1] is listing_id
+
+    conn.commit()
+    print("Trade accepted and moved to transactions.")
+    conn.close()

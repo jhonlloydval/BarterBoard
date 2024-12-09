@@ -33,14 +33,15 @@ def add_transaction_table():
     conn = sqlite3.connect("barterboard.db")
     cursor = conn.cursor()
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS transaction_history (
-        id INTEGER PRIMARY KEY,
-        username TEXT,
+    CREATE TABLE IF NOT EXISTS transactions (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        from_user TEXT,
+        to_user TEXT,
         item TEXT,
         description TEXT,
         quantity INTEGER,
         location TEXT,
-        traded_with TEXT
+        status TEXT
     )
     """)
 

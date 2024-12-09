@@ -58,7 +58,9 @@ def main_menu():
 
         elif menu_choice == "5":
             clear_terminal()
-            barter_transaction()
+            result = view_transactions_menu()
+            if result == "RETURN_TO_MENU":
+                continue
 
         elif menu_choice == "6":
             clear_terminal()

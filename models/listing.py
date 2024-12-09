@@ -1,7 +1,7 @@
 from models.user import *
 import sqlite3
 from clear import clear_terminal
-
+from main_menu.bargain import accept_trade
 def add_listings_table():
     conn = sqlite3.connect("barterboard.db")
     cursor = conn.cursor()
@@ -37,6 +37,7 @@ def display_barterboard():
         FROM listings l
         INNER JOIN users u ON l.user_id = u.id
     """)
+    
     results = cursor.fetchall()
 
     listings = []  # To store processed listings
@@ -380,8 +381,11 @@ class Listing:
         user_listings = cursor.fetchall()
 
         if not user_listings:
+            print("----------------------------------------------")
             print("No listings available for this user.")
+            print("----------------------------------------------")
             conn.close()
+            input("Press enter to exit.")
             return
 
         print("\nL I S T I N G  U P D A T E")
@@ -414,6 +418,9 @@ class Listing:
                     while True:
                         decision = input(f"Do you want to accept this proposal? Enter '1' for Yes, '2' for No, or 'x' to skip: ").strip()
 
+
+                        get_username = list(User.get_logged_in_user())
+                        username = get_username[1]
                         if decision == '1':
                             cursor.execute("""
                                 UPDATE proposals
@@ -422,6 +429,7 @@ class Listing:
                             """, (proposal_id,))
                             conn.commit()
                             print(f"Proposal ID {proposal_id} has been accepted.")
+                            accept_trade(proposal_id, username)
                             break
                         elif decision == '2':
                             cursor.execute("""
@@ -440,6 +448,6 @@ class Listing:
             print("----------------------------------------------")
 
         conn.close()
-
+        
         choice = input("Press enter to exit.")
         clear_terminal()
