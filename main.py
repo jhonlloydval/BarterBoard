@@ -115,11 +115,11 @@ start_menu()
 
 
 # TO BE ADDED FEATURES
-# TBA Ung mga ASCII art
+# DONE TBA Ung mga ASCII art
 # DONE TBA Barter name to be updated. It is currently a place holder.
 # TBA I'll make a secret code where if it is ran, I will go to database editor where I can remove users.
-# TBA Clears when I enter something.
+# DONE TBA Clears when I enter something.
 # DONE TBA bawal gumawa ng proposal sa sariling item
 # DONE TBA dapat nasa item 18 kung sa 18 nag proposal
-# TBA napunta agad sa main menu pag pumunta me sa listing update
-# TBA pag galing sa listing update/ feel ko sa listing update, napunta agad ng barter
+# DONE TBA napunta agad sa main menu pag pumunta me sa listing update
+# DONE TBA pag galing sa listing update/ feel ko sa listing update, napunta agad ng barter

@@ -11,6 +11,7 @@ def add_proposal_table():
      username TEXT,
      item TEXT,
      description TEXT,
+     quantity INTEGER,
      from_user TEXT,
      status TEXT DEFAULT 'Pending'
      )
@@ -18,13 +19,13 @@ def add_proposal_table():
     conn.commit()
     conn.close()
 
-def save_proposal(listing_id, username, item, description, from_user):
+def save_proposal(listing_id, username, item, description, quantity, from_user):
     conn = sqlite3.connect("barterboard.db")
     cursor = conn.cursor()
     cursor.execute("""
-        INSERT INTO proposals (listing_id, username, item, description, from_user, status)
+        INSERT INTO proposals (listing_id, username, item, description, quantity, from_user, status)
         VALUES (?, ?, ?, ?, ?, 'Pending')
-    """, (listing_id, username, item, description, from_user))
+    """, (listing_id, username, item, description, quantity, from_user))
     conn.commit()
     conn.close()
 

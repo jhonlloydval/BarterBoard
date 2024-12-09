@@ -87,9 +87,9 @@ def bargain(username, listings):
         listing_id = listing_result[0]
 
         cursor.execute("""
-        INSERT INTO proposals (username, item, description, from_user, status, listing_id)
-        VALUES (?, ?, ?, ?, ?, ?)
-        """, (selected_item["username"], item, description, final_name, "Pending", listing_id))
+        INSERT INTO proposals (username, item, description, quantity, from_user, status, listing_id)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+        """, (selected_item["username"], item, description, quantity, final_name, "Pending", listing_id))
         
         conn.commit()
         print("Trade request sent successfully!")
@@ -106,7 +106,6 @@ def accept_trade(proposal_id, username):
 
     cursor.execute("SELECT * FROM proposals WHERE id = ?", (proposal_id,))
     proposal = cursor.fetchone()
-
     if not proposal:
         print("Proposal not found.")
         conn.close()
@@ -115,7 +114,7 @@ def accept_trade(proposal_id, username):
     cursor.execute("""
                    INSERT INTO transactions (from_user, to_user, item, description, quantity, location, status)
                    VALUES (?, ?, ?, ?, ?, ?, ?)
-                   """, (proposal[1], username, proposal[2], proposal[3], proposal[4], proposal[5], "Accepted" ))
+                   """, (proposal[6], username, proposal[2], proposal[3], proposal[4], proposal[5], "Accepted" ))
     
     cursor.execute("""
         UPDATE proposals SET status = 'Accepted' WHERE id = ?

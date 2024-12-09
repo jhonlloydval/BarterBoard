@@ -398,7 +398,7 @@ class Listing:
 
             # Retrieve proposals for this listing
             cursor.execute("""
-                SELECT id, item, description, from_user
+                SELECT id, item, description, quantity, from_user
                 FROM proposals
                 WHERE listing_id = ? AND status = 'Pending'
             """, (listing_id,))
@@ -408,10 +408,11 @@ class Listing:
                 print("Proposal: None")
             else:
                 for proposal in proposals:
-                    proposal_id, proposal_item, description, from_user = proposal
+                    proposal_id, proposal_item, description, proposal_quantity, from_user = proposal
                     print(f"\nProposal ID: {proposal_id}")
                     print(f"Item Name: {proposal_item}")
                     print(f"Description: {description}")
+                    print(f"Quantity: {proposal_quantity}")
                     print(f"From User: {from_user}")
 
                     # Ask the user whether they want to accept or reject the proposal

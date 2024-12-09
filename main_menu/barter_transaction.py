@@ -22,8 +22,6 @@ def view_transactions_menu():
 
     view_transactions()
 
-    
-    input("Press enter to exit.")
     return "RETURN_TO_MENU"
 
 
@@ -56,14 +54,15 @@ def view_transactions():
     
     for transaction in transactions:
         print(f"\nTransaction ID: {transaction[0]}")
-        print(f"From: {transaction[6]}")
+        print(f"From: {transaction[1]} ")
         print(f"To: {transaction[2]}")
         print(f"Item: {transaction[4]}")
         print(f"Description: {transaction[5]}")
-        print(f"Quantity: {transaction[1]}")
+        print(f"Quantity: {transaction[6]}")
         print(f"Status: {transaction[7]}")
         print("----------------------------------------------------")
 
-
+    input("Press enter to exit.")
+    clear_terminal()
     conn.close()
 
