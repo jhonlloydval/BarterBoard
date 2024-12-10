@@ -65,8 +65,60 @@ BarterBoard fosters resource sharing, waste reduction, and stronger communities 
    This section displays a history of all completed exchanges, providing users with a clear record of their contributions and trades. It helps users track their activity and fosters trust within the community.  
    ![Transaction](gif/transactions.gif)  
 
-## **Sustainability Impact**  
-By encouraging the reuse of resources and reducing waste, BarterBoard promotes sustainability while fostering a culture of sharing and collaboration. This innovative approach to exchanges ensures inclusivity, responsibility, and economic participation for all.  
+## **Prerequisites**  
+
+You must have the following installed and set up before proceeding:  
+
+- **Python 3.12.6** or later  
+- **MySQL Server** and **MySQL Connector for Python** (use `pip install mysql-connector-python`)  
+- **IDE or Terminal** (e.g., Visual Studio Code, PyCharm, or your preferred terminal)  
+- **Git** (optional)  
+- **GitHub Account** (optional)  
 
 ---
-**BarterBoard: Where Sustainability Meets Innovation.**  
+
+## **Installation**  
+
+### **Clone the Repository**  
+
+#### Option 1: Using Git (Git and GitHub Account Required)  
+1. Open your terminal or launch Visual Studio Code.  
+2. In the terminal or command palette (Ctrl+Shift+P on Windows, Command+Shift+P on Mac), type `Git: Clone` and select it.  
+3. Copy and paste the following repository URL and press Enter:  
+   ```bash
+   https://github.com/jhonlloydval/BarterBoard.git
+4. Choose a destination folder to clone the repository.
+5.	Navigate to the cloned repository folder.
+
+### Option 2: Download as ZIP
+1.	Visit the repository’s GitHub page.
+2.	Click on the Code button and select Download ZIP.
+3.	Extract the downloaded ZIP file.
+4.	Open the extracted folder in your IDE or terminal.
+
+## **Sustainability Impact**  
+By encouraging the reuse of resources and reducing waste, BarterBoard promotes sustainability while fostering a culture of sharing and collaboration. This innovative approach to exchanges ensures inclusivity, responsibility, and economic participation for all.  
+# **BarterBoard and Sustainable Development Goals (SDGs)**
+
+## **No Poverty (SDG 1):**
+- **Empowering Communities**: Enables users to trade goods and services without money, helping those in need.
+- **Access to Essentials**: Provides a platform for people to exchange resources, reducing financial barriers.
+
+## **Zero Hunger (SDG 2):**
+- **Redistribution of Goods**: Facilitates food and essentials exchange, contributing to food security.
+- **Community Support**: Encourages local sharing of resources to combat hunger.
+
+## **Sustainable Cities and Communities (SDG 11):**
+- **Encouraging Sustainability**: Promotes reuse and recycling of goods, reducing waste and supporting sustainable cities.
+- **Stronger Communities**: Fosters collaboration, building resilient, self-sufficient communities.
+
+## **Responsible Consumption and Production (SDG 12):**
+- **Minimizing Waste**: Reduces waste by encouraging the exchange of surplus items.
+- **Sustainable Practices**: Promotes responsible consumption by facilitating the reuse of goods.
+
+---
+## **How BarterBoard Supports These Goals:**
+- **User-Friendly**: Easy-to-use platform for exchanging goods and services.
+- **Community-Driven**: Encourages local collaboration and sharing of resources.
+- **Promotes Sustainability**: Focuses on reducing waste and supporting a circular economy.
+---
