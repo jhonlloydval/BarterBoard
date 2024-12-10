@@ -18,15 +18,14 @@ BarterBoard is a Python-MySQL console application inspired by traditional barter
 - **SDG 8: Decent Work and Economic Growth**  
   Stimulating economic participation by enabling non-monetary trade opportunities.  
 
-BarterBoard is inspired from the spirit of Barter tradition, creating and ensuring a 
-sustainable community development. 
-
+BarterBoard is inspired by the spirit of the barter tradition, creating and ensuring sustainable community development.  
 
 ## **Features**  
 BarterBoard fosters resource sharing, waste reduction, and stronger communities by offering the following functionalities:  
 
 | **Feature**         | **Description**                                                                 |
 |----------------------|---------------------------------------------------------------------------------|
+| **Register/Login**   | Create an account or log in to access personalized features and manage listings. |
 | **BarterBoard**      | Explore all available items for trade and propose your own items in exchange.   |
 | **Add Listings**     | Post new items for trade.                                                      |
 | **View Listings**    | View your own items, with options to edit and remove them as needed.            |
@@ -34,16 +33,19 @@ BarterBoard fosters resource sharing, waste reduction, and stronger communities 
 | **Transaction**      | View your completed exchanges to monitor your contributions.                   |
 
 ## **How It Works**  
-1. **View Listings**:  
+1. **Register and Login**:  
+   Users create an account or log in to access BarterBoard features.  
+
+2. **View Listings**:  
    Browse items available for trade and select ones you’re interested in.  
 
-2. **Propose Trades**:  
+3. **Propose Trades**:  
    Offer your items in exchange and wait for the listing owner to review your proposal.  
 
-3. **Manage Listings**:  
+4. **Manage Listings**:  
    Edit or remove your listings at any time to keep your profile updated.  
 
-4. **Foster Collaboration**:  
+5. **Foster Collaboration**:  
    By engaging in trades, users actively contribute to sustainable practices and stronger communities.  
 
 ## **Sustainability Impact**  
