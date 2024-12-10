@@ -164,7 +164,7 @@ class Listing:
         conn = sqlite3.connect("barterboard.db")
         cursor = conn.cursor()
 
-        # Get the user_id of the current user based on their username
+        # Dito makukuha ung USER ID basta 
         cursor.execute("SELECT id FROM users WHERE username = ?", (self.username,))
         user = cursor.fetchone()
         if user:
