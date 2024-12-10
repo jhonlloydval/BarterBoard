@@ -418,7 +418,7 @@ class Listing:
 
                     # Ask the user whether they want to accept or reject the proposal
                     while True:
-                        decision = input(f"Do you want to accept this proposal? Enter '1' for Yes, '2' for No, or 'x' to skip: ").strip()
+                        decision = input(f"Do you want to accept this proposal? \nEnter '1' for Yes, '2' for No, or 'x' to skip: ").strip()
 
 
                         get_username = list(User.get_logged_in_user())
